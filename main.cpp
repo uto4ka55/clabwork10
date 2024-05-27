@@ -5,21 +5,21 @@ using namespace std;
 
 class Furniture {
 public:
-    virtual void StoreObject(const string& object) {
+    virtual void ToStoreThings(const string& object) {
         cout << "Storing " << object << " in furniture." << endl;
     }
 };
 
 class Bookcase : public Furniture {
 public:
-    void StoreObject(const string& object) override{
+    void ToStoreThings(const string& object) override{
         cout << "Storing " << object << " in bookcase." << endl;
     }
 };
 
 class Cupboard : public Furniture {
 public:
-    void StoreObject(const string& object) override{
+    void ToStoreThings(const string& object) override{
         cout << "Storing " << object << " in cupboard." << endl;
     }
 };
@@ -73,7 +73,7 @@ int main() {
             cerr << "Exception caught: " << e.what() << endl;
             return 1;
         }
-            furniture->StoreObject(object);
+            furniture->ToStoreThings(object);
             delete furniture;
     }
 }
